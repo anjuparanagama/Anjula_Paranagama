@@ -393,7 +393,7 @@ function App() {
               <a href="https://github.com/anjuparanagama" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="www.linkedin.com/in/anjula-paranagama" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
+              <a href="https://www.linkedin.com/in/anjula-paranagama" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
                 <Linkedin className="h-6 w-6" />
               </a>
               <a href="#" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
