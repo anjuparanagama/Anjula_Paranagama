@@ -390,10 +390,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center">
             <div className="flex justify-center space-x-8">
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
+              <a href="https://github.com/anjuparanagama" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
+              <a href="www.linkedin.com/in/anjula-paranagama-095044306" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
                 <Linkedin className="h-6 w-6" />
               </a>
               <a href="#" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
