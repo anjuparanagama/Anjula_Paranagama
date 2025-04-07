@@ -47,7 +47,7 @@ const Typewriter: React.FC = () => {
       I am a  
       <span className="text-blue-600 relative">
         {`${phrases[index].substring(0, subIndex)}`}
-        <span className={`border-r-2 border-black ${blink ? 'opacity-100' : 'opacity-0'}`}>|</span>
+        <span className={`border-r-2 border-black ${blink ? 'opacity-100' : 'opacity-0'}`}></span>
       </span>
     </h1>
   );

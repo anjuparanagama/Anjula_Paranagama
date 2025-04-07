@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Twitter, Mail, Menu, X, ExternalLink, Code2, Shield, Database, Terminal, ArrowRight, Calendar, Phone, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import TItle from './Title.tsx';
+import Frm from './Form.tsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -289,6 +290,7 @@ function App() {
             </div>
 
             {/* Appointment Form */}
+            <Frm />
             <div className="bg-white rounded-2xl p-8 shadow-xl border border-blue-50">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Schedule an Appointment</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -398,9 +400,6 @@ function App() {
               </a>
               <a href="#" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
                 <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-600 transition-all hover:scale-110">
-                <Mail className="h-6 w-6" />
               </a>
             </div>
             <p className="mt-8 text-center text-gray-500">
