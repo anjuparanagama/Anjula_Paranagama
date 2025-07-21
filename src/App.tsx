@@ -52,6 +52,18 @@ function App() {
 
   const projects = [
     {
+      title: 'Function.O',
+      description: 'A Full-Stack Event Management System with QR-Based Ticketing, Custom Designs, Real-Time Attendance, Email Automation, and a Modern Blue-White UI using React, Tailwind CSS, and Supabase',
+      image: '/function.png',
+      tags: ['React', 'Tailwind CSS', 'Supabase', 'EmailJs'],
+    },
+    {
+      title: 'Laptop Mart',
+      description: 'A Full-Stack E-Commerce Platform for Laptop Sales with User Authentication, Product Listings, Cart System, Order Management, Admin Dashboard, and Modern UI using Next.js, Node.js, MySQL, and Tailwind CSS',
+      image: '/laptopmart.png',
+      tags: ['Next', 'Tailwind CSS', 'NodeJs', 'mySQL'],
+    },
+    {
       title: 'Meteo Earth',
       description: 'A weather forecasting web application that fetches real-time weather data using the OpenWeather API. It displays temperature, humidity, wind speed, and weather conditions in an interactive and visually appealing format.',
       image: '/weather.png',
