@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 const phrases = [
-  " Web Designer",
+  " Software Engineer",
   " DevOps Enthusiast",
   " Full Stack Developer",
-  " SecOps Enthusiast"
+  " AIOps Enthusiast",
 ];
 
 const Typewriter: React.FC = () => {
@@ -28,9 +28,15 @@ const Typewriter: React.FC = () => {
       return;
     }
 
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, Math.max(reverse ? 75 : subIndex === phrases[index].length ? 1000 : 150, parseInt(Math.random() * 50)));
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => prev + (reverse ? -1 : 1));
+      },
+      Math.max(
+        reverse ? 75 : subIndex === phrases[index].length ? 1000 : 150,
+        Math.floor(Math.random() * 50),
+      ),
+    );
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse]);
@@ -44,10 +50,12 @@ const Typewriter: React.FC = () => {
 
   return (
     <h1 className="text-3xl font-bold relative">
-      I am a  
+      I am a
       <span className="text-blue-600 relative">
         {`${phrases[index].substring(0, subIndex)}`}
-        <span className={`border-r-2 border-black ${blink ? 'opacity-100' : 'opacity-0'}`}></span>
+        <span
+          className={`border-r-2 border-black ${blink ? "opacity-100" : "opacity-0"}`}
+        ></span>
       </span>
     </h1>
   );
