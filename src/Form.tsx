@@ -1,50 +1,54 @@
-import React, { useState } from 'react';
-import { Calendar } from 'lucide-react'; // optional icon
+import React, { useState } from "react";
+import { Calendar } from "lucide-react"; // optional icon
 
-const AppointmentForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    date: '',
-    time: '',  // Corrected 'ttime' to 'time'
-    message: ''
+type FormData = {
+  name: string;
+  date: string;
+  time: string;
+  message: string;
+};
+
+const AppointmentForm: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    date: "",
+    time: "",
+    message: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target as HTMLInputElement;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Prepare the message for the WhatsApp Click-to-Chat link
-    const message = `
-      New Appointment Request:
-
-      Name: ${formData.name}
-      Date: ${formData.date}
-      Time: ${formData.time}
-      Message: ${formData.message}
-    `;
-
-    // URL encode the message to ensure it's properly formatted
+    const message = `New Appointment Request:\n\nName: ${formData.name}\nDate: ${formData.date}\nTime: ${formData.time}\nMessage: ${formData.message}`;
     const encodedMessage = encodeURIComponent(message);
 
-    // WhatsApp Click-to-Chat link
-    const whatsappLink = `https://wa.me/759066754?text=${encodedMessage}`; // Your WhatsApp number // Replace with recipient's phone number
+    const whatsappLink = `https://wa.me/759066754?text=${encodedMessage}`; // replace number if needed
 
-    // Redirect to WhatsApp
-    window.open(whatsappLink, '_blank');
+    // Open WhatsApp in a new tab/window
+    window.open(whatsappLink, "_blank");
 
-    // Optionally, you can alert the user about the action
-    alert('Your appointment request has been sent via WhatsApp!');
+    // Basic confirmation
+    alert("Your appointment request has been sent via WhatsApp!");
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl border border-blue-50">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-6">Schedule an Appointment</h3>
+    <div className="bg-white rounded-2xl p-8 shadow-xl border border-green-50">
+      <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+        Schedule an Appointment
+      </h3>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Full Name
           </label>
           <input
@@ -53,7 +57,7 @@ const AppointmentForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-700 focus:border-transparent transition-all"
             placeholder="John"
             required
           />
@@ -61,7 +65,10 @@ const AppointmentForm = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="date"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Preferred Date
             </label>
             <input
@@ -70,29 +77,35 @@ const AppointmentForm = () => {
               name="date"
               value={formData.date}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-700 focus:border-transparent transition-all"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="time"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Preferred Time
             </label>
             <input
-              type="time"  // Corrected from 'ttime' to 'time'
-              id="time"    // Corrected from 'ttime' to 'time'
-              name="time"  // Corrected from 'ttime' to 'time'
+              type="time"
+              id="time"
+              name="time"
               value={formData.time}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-700 focus:border-transparent transition-all"
               required
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Message
           </label>
           <textarea
@@ -101,7 +114,7 @@ const AppointmentForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-700 focus:border-transparent transition-all"
             placeholder="Tell me about your project..."
             required
           ></textarea>
@@ -109,7 +122,7 @@ const AppointmentForm = () => {
 
         <button
           type="submit"
-          className="w-full px-6 py-4 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-all hover:scale-105 shadow-lg shadow-blue-500/20 flex items-center justify-center"
+          className="w-full px-6 py-4 bg-green-700 text-white font-medium rounded-xl hover:bg-green-800 transition-all hover:scale-105 shadow-lg shadow-green-700/20 flex items-center justify-center"
         >
           <Calendar className="w-5 h-5 mr-2" />
           Schedule Appointment

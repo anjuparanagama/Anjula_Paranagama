@@ -1,11 +1,344 @@
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
   }
-  
-  h1 span {
-    font-family: monospace;
-    white-space: nowrap;
-    overflow: hidden;
+  50% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
+
+h1 span {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Hero animations and visuals */
+.hero-bg {
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(6, 94, 59, 0.08), transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(6, 94, 59, 0.06), transparent 10%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background-size: 200% 200%;
+  animation: bgShift 12s linear infinite;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(20px, -10px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 10px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 700ms ease forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #064e3b, #10b981);
+  color: white;
+}
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(6, 94, 59, 0.18);
+}
+.cta-outline {
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: white;
+  color: #1f2937;
+}
+.cta-outline:hover {
+  background: rgba(6, 94, 59, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Education section modern styles */
+.edu-card {
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), #ffffff);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.04);
+  border: 1px solid rgba(6, 94, 59, 0.06);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+.edu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.08);
+}
+
+/* subtle glass effect for cards */
+.edu-card {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.edu-badge {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  box-shadow: 0 8px 20px rgba(6, 94, 59, 0.12);
+}
+
+@media (min-width: 768px) {
+  .edu-card {
+    padding: 1.5rem;
+  }
+}
+
+.edu-section-highlight {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 94, 59, 0.02),
+    rgba(6, 94, 59, 0.01)
+  );
+}
+
+/* Timeline flow animation and reveal */
+.timeline {
+  position: relative;
+  padding-left: 3.25rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 94, 59, 0.18),
+    rgba(6, 94, 59, 0.08)
+  );
+  background-size: 100% 200%;
+  animation: flow 2.8s linear infinite;
+  box-shadow: 0 6px 18px rgba(6, 94, 59, 0.06);
+}
+
+.timeline-item {
+  opacity: 0;
+  transform: translateY(12px) translateX(-6px);
+  animation: slideIn 520ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.edu-badge {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* small pulse on the badge to hint flow */
+.edu-badge::after {
+  content: "";
+  position: absolute;
+  inset: -6px -6px auto auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 6px;
+  background: radial-gradient(
+    circle at center,
+    rgba(6, 94, 59, 0.25),
+    transparent 40%
+  );
+  filter: blur(6px);
+  opacity: 0.9;
+  transform: translate(6px, 6px);
+  z-index: 0;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9) translate(6px, 6px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15) translate(6px, 6px);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(0.9) translate(6px, 6px);
+    opacity: 0.6;
+  }
+}
+
+/* Projects: modern card animations and overlay */
+.project-card {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: cardUp 560ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes cardUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-overlay {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 280ms ease;
+}
+.project-card:hover .project-overlay,
+.project-card:focus-within .project-overlay,
+.group:hover .project-overlay {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tag-anim {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+.tag-anim:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(6, 94, 59, 0.08);
+}
+
+/* small utility to clamp text for descriptions if line-clamp isn't available via plugin */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Project details modal styles */
+.project-modal-card {
+  animation: modalUp 360ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  background: linear-gradient(180deg, #ffffff, #ffffff);
+}
+
+.modal-media {
+  min-height: 220px;
+  display: flex;
+  align-items: stretch;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #fff);
+}
+
+.feature-list {
+  list-style: disc;
+  margin-left: 1rem;
+  display: grid;
+  gap: 6px;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 94, 59, 0.06),
+    rgba(6, 94, 59, 0.04)
+  );
+  color: #0f172a;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.03);
+}
+
+@keyframes modalUp {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-media {
+    min-height: 180px;
+  }
+}
