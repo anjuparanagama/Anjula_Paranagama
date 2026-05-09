@@ -5,6 +5,8 @@ type Project = {
   title: string;
   description: string;
   image: string;
+  link?: string;
+  codeLink?: string;
   tags: string[];
 };
 
@@ -77,16 +79,36 @@ export default function ProjectDetails({
 
           <div className="flex gap-3">
             <a
-              href="#"
-              onClick={(e) => e.stopPropagation()}
+              href={project.link || "#"}
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                const url = project.link || "#";
+                if (url === "#") return;
+                const final = /^https?:\/\//i.test(url)
+                  ? url
+                  : `https://${url.replace(/^\/+/, "")}`;
+                window.open(final, "_blank", "noopener,noreferrer");
+              }}
               className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md hover:brightness-105"
+              aria-label="Live preview"
             >
               Live preview
             </a>
             <a
-              href="#"
-              onClick={(e) => e.stopPropagation()}
+              href={project.codeLink || "#"}
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                const url = project.codeLink || "#";
+                if (url === "#") return;
+                const final = /^https?:\/\//i.test(url)
+                  ? url
+                  : `https://${url.replace(/^\/+/, "")}`;
+                window.open(final, "_blank", "noopener,noreferrer");
+              }}
               className="px-4 py-2 border border-slate-100 text-slate-800 rounded-lg"
+              aria-label="View code"
             >
               View code
             </a>
