@@ -85,11 +85,29 @@ function App() {
 
   const projects = [
     {
+      title: "Kandalama",
+      description:
+        "Kandalama is a property selling website where users can buy, sell, and rent properties through an easy-to-use platform with property listings and details.",
+      image: "/kandalama.png",
+      tags: [
+        "Next",
+        "Typescript",
+        "Tailwind CSS",
+        "Supabase",
+        "OAuth",
+        "Cloudinary",
+      ],
+      link: "kandalama.app",
+      codeLink: "#",
+    },
+    {
       title: "Function.O",
       description:
         "A Full-Stack Event Management System with QR-Based Ticketing, Custom Designs, Real-Time Attendance, Email Automation, and a Modern Blue-White UI using React, Tailwind CSS, and Supabase",
       image: "/function.png",
       tags: ["React", "Tailwind CSS", "Supabase", "EmailJs"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "Laptop Mart",
@@ -97,6 +115,8 @@ function App() {
         "A Full-Stack E-Commerce Platform for Laptop Sales with User Authentication, Product Listings, Cart System, Order Management, Admin Dashboard, and Modern UI using Next.js, Node.js, MySQL, and Tailwind CSS",
       image: "/laptopmart.png",
       tags: ["Next", "Tailwind CSS", "NodeJs", "mySQL"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "Meteo Earth",
@@ -104,6 +124,8 @@ function App() {
         "A weather forecasting web application that fetches real-time weather data using the OpenWeather API. It displays temperature, humidity, wind speed, and weather conditions in an interactive and visually appealing format.",
       image: "/weather.png",
       tags: ["html", "css", "javascript", "API"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "Conference Day Management System",
@@ -111,6 +133,8 @@ function App() {
         "A web-based system that streamlines conference management by handling participant registrations, schedules, and email notifications. It includes an admin panel for event organizers and an automated email system using PHPMailer.",
       image: "/irc.png",
       tags: ["HTML", "CSS", "PHP"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "Eco Vibe",
@@ -118,6 +142,8 @@ function App() {
         "A modern and eco-friendly website built using React, designed to promote sustainability and environmental awareness. It features interactive UI components, responsive design, and smooth navigation.",
       image: "/ecovibe.png",
       tags: ["React", "Tailwind CSS"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "Simple Library Management System",
@@ -125,6 +151,8 @@ function App() {
         "A basic library management system built in Java to help manage book records, issue tracking, and user management. It provides a simple interface for adding, searching, and issuing books.",
       image: "/lms.png",
       tags: ["Python"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "Simple Library Management System",
@@ -132,6 +160,8 @@ function App() {
         "A Python-based library management system designed to handle book inventory, user accounts, and book transactions efficiently. It supports basic CRUD operations and a user-friendly interface.",
       image: "/lms.png",
       tags: ["Java"],
+      link: "#",
+      codeLink: "#",
     },
     {
       title: "QR Code Generator ",
@@ -139,6 +169,8 @@ function App() {
         "A simple web application that generates QR codes for URLs, text, and other data. Users can customize the size and style of the QR codes and download them for use.",
       image: "/qr.png",
       tags: ["HTML", "CSS", "JavaScript"],
+      link: "#",
+      codeLink: "#",
     },
   ];
 
@@ -286,14 +318,9 @@ function App() {
               <div className="relative w-80 h-80 md:w-96 md:h-96">
                 <div className="blob absolute -left-8 -top-8 w-96 h-96 rounded-full opacity-30 blur-3xl animate-blob"></div>
                 <img
-                  src="/profbg.png"
+                  src="/me.png"
                   alt="Profile background"
-                  className="absolute inset-0 rounded-3xl w-full h-[500px] object-cover z-0"
-                />
-                <img
-                  src="/prof.png"
-                  alt="Profile"
-                  className="relative rounded-3xl w-full h-full object-cover mt-8 z-10"
+                  className=" rounded-3xl w-11/12 h-[500px] object-cover z-0"
                 />
                 <div className="absolute -bottom-10 -right-4 flex space-x-3 z-20">
                   <a
@@ -374,16 +401,34 @@ function App() {
                   <div className="absolute inset-0 flex items-end justify-between p-4 project-overlay">
                     <div className="flex space-x-2">
                       <a
-                        href="#"
-                        onClick={(e) => e.stopPropagation()}
+                        href={project?.link || "#"}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          const url = project?.link || "#";
+                          if (url === "#") return;
+                          const final = /^https?:\/\//i.test(url)
+                            ? url
+                            : `https://${url.replace(/^\/+/, "")}`;
+                          window.open(final, "_blank", "noopener,noreferrer");
+                        }}
                         className="bg-white/90 text-gray-800 p-2 rounded-md shadow hover:scale-105 transition-transform"
                         aria-label="Open project"
                       >
                         <ExternalLink className="w-4 h-4" />
                       </a>
                       <a
-                        href="#"
-                        onClick={(e) => e.stopPropagation()}
+                        href={project?.codeLink || "#"}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          const url = project?.codeLink || "#";
+                          if (url === "#") return;
+                          const final = /^https?:\/\//i.test(url)
+                            ? url
+                            : `https://${url.replace(/^\/+/, "")}`;
+                          window.open(final, "_blank", "noopener,noreferrer");
+                        }}
                         className="bg-white/90 text-gray-800 p-2 rounded-md shadow hover:scale-105 transition-transform"
                         aria-label="View code"
                       >

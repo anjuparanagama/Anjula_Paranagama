@@ -1,4 +1,5 @@
 import { Code2, Monitor, Server, Database, Cpu, Wrench } from "lucide-react";
+import TechStack from "./tech";
 
 type Groups = Record<string, Array<string | { name: string; detail?: string }>>;
 
@@ -98,6 +99,9 @@ export default function Skills({
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-6 -mb-6">
+          <TechStack />
         </div>
       </div>
     </section>
