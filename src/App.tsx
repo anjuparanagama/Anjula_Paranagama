@@ -334,7 +334,7 @@ function App() {
                   </a>
 
                   <a
-                    href="https://linkedin.com/in/anjulaparanagama"
+                    href="www.linkedin.com/in/anjula-paranagama"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-white rounded-full shadow-md cursor-pointer"
