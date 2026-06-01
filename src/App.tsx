@@ -31,8 +31,8 @@ function App() {
   }, []);
 
   const navigation = [
-    { name: "Education & Experience", href: "#education" },
     { name: "Skills", href: "#skills" },
+    { name: "Education & Experience", href: "#education" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
