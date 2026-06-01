@@ -31,25 +31,19 @@ function App() {
   }, []);
 
   const navigation = [
-    { name: "Education & Experience", href: "#education" },
     { name: "Skills", href: "#skills" },
+    { name: "Education & Experience", href: "#education" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
   const skillsByCategory = {
-    "Programming Languages": [
-      "Python",
-      "Java",
-      "JavaScript",
-      "TypeScript",
-      "HTML",
-    ],
+    "Programming Languages": ["Python", "Java", "JavaScript", "TypeScript"],
     "Frontend & Mobile Frameworks": [
       "React",
       "Next.js",
       "Tailwind CSS",
-      "CSS",
+      "HTML",
       "React Native",
     ],
     "Backend Frameworks": ["Node.js", "Express", "Flask/FastAPI"],
@@ -491,7 +485,7 @@ function App() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-10 sm:py-32 bg-gradient-to-b from-white to-green-50"
+        className="py-10 sm:py-10  bg-gradient-to-b from-white to-green-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
