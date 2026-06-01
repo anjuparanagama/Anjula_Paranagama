@@ -38,7 +38,13 @@ function App() {
   ];
 
   const skillsByCategory = {
-    "Programming Languages": ["Python", "Java", "JavaScript", "Go", "HTML"],
+    "Programming Languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+    ],
     "Frontend & Mobile Frameworks": [
       "React",
       "Next.js",
@@ -46,9 +52,9 @@ function App() {
       "CSS",
       "React Native",
     ],
-    "Backend Frameworks": ["Node.js", "Express", "Flask/FastAPI", "Go"],
+    "Backend Frameworks": ["Node.js", "Express", "Flask/FastAPI"],
     Database: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
-    AI: ["OpenAI", "TensorFlow"],
+    AI: ["OpenAI", "TensorFlow", "PyTorch"],
     Other: ["Docker", "Vercel", "Git", "Arduino", "Postman", "Figma", "Linux"],
   };
 
@@ -58,6 +64,7 @@ function App() {
     Go: "Concurrent programming, microservices",
     "React Native": "Cross-platform mobile development",
     "Flask/FastAPI": "Python web frameworks for APIs",
+    TypeScript: "Static typing, scalable JavaScript development",
     JavaScript: "ES6+, DOM, async programming",
     MongoDB: "NoSQL database, document modeling",
     HTML: "Semantic markup, accessibility",
@@ -73,6 +80,7 @@ function App() {
     Supabase: "Hosted Postgres + auth",
     OpenAI: "Prompting & integration",
     TensorFlow: "ML model building",
+    PyTorch: "Deep learning framework",
     Docker: "Containerization and images",
     AWS: "EC2, S3, basic infra",
     Git: "Version control workflows",
