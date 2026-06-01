@@ -36,11 +36,11 @@ export default function ProjectDetails({
           <X className="w-4 h-4" />
         </button>
 
-        <div className="modal-media bg-gradient-to-br object-contain from-blue-50 to-white">
+        <div className="modal-media bg-gradient-to-br from-blue-50 to-white">
           <img
             src={project.image}
             alt={project.title}
-            className="modal-img w-full h-full object-cover"
+            className="modal-img w-full h-full object-contain"
           />
         </div>
 
