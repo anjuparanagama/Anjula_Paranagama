@@ -93,7 +93,7 @@ function App() {
 
   const projects = [
     {
-      title: "Kandalama",
+      title: "Kandalama - Property Selling Website",
       description:
         "Kandalama is a property selling website where users can buy, sell, and rent properties through an easy-to-use platform with property listings and details.",
       image: "/kandalama.png",
@@ -109,13 +109,32 @@ function App() {
       codeLink: "#",
     },
     {
+      title: "LocationsLk - NPM Package",
+      description:
+        "locationLk is a typed Sri Lankan locations SDK for provinces and districts. It provides deterministic lookups, simple search, translation helpers and validation utilities with a small, tree-shakable API.",
+      image: "/npm.png",
+      tags: ["Node.js", "TypeScript", "JSON"],
+      link: "https://www.npmjs.com/package/locationslk",
+      codeLink: "https://github.com/anjuparanagama/locationsLk",
+    },
+    {
+      title: "Guesture Control With Python",
+      description:
+        "A Python-based gesture control system that allows users to interact with their computer using hand gestures.",
+      image: "/guesture.png",
+      tags: ["Python", "OpenCV", "MediaPipe", "Prompt Engineering"],
+      link: "https://www.linkedin.com/posts/anjula-paranagama_python-opencv-mediapipe-activity-7459621778185965568-pjkE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE31v3EBwvmYa9K5Xqrm01ABDASMYjM1Ek4",
+      codeLink:
+        "https://github.com/anjuparanagama/Guesture-Control-with-Python",
+    },
+    {
       title: "Function.O",
       description:
         "A Full-Stack Event Management System with QR-Based Ticketing, Custom Designs, Real-Time Attendance, Email Automation, and a Modern Blue-White UI using React, Tailwind CSS, and Supabase",
       image: "/function.png",
       tags: ["React", "Tailwind CSS", "Supabase", "EmailJs"],
-      link: "#",
-      codeLink: "#",
+      link: "https://functiono.vercel.app/",
+      codeLink: "https://github.com/anjuparanagama/Function.O",
     },
     {
       title: "Laptop Mart",
@@ -123,8 +142,8 @@ function App() {
         "A Full-Stack E-Commerce Platform for Laptop Sales with User Authentication, Product Listings, Cart System, Order Management, Admin Dashboard, and Modern UI using Next.js, Node.js, MySQL, and Tailwind CSS",
       image: "/laptopmart.png",
       tags: ["Next", "Tailwind CSS", "NodeJs", "mySQL"],
-      link: "#",
-      codeLink: "#",
+      link: "https://laptopmart.vercel.app/",
+      codeLink: "https://github.com/anjuparanagama/Laptop-Mart",
     },
     {
       title: "Meteo Earth",
@@ -136,13 +155,13 @@ function App() {
       codeLink: "#",
     },
     {
-      title: "Conference Day Management System",
+      title: "Budget Buddy - Expense Tracking App",
       description:
-        "A web-based system that streamlines conference management by handling participant registrations, schedules, and email notifications. It includes an admin panel for event organizers and an automated email system using PHPMailer.",
-      image: "/irc.png",
-      tags: ["HTML", "CSS", "PHP"],
+        "A web-based system that streamlines expense tracking and budgeting for individuals and households. It allows users to categorize expenses, set budgets, and generate reports to gain insights into their spending habits.",
+      image: "/budgetbuddy.png",
+      tags: ["React-Native", "NativeWind", "python Flask", "MongoDB"],
       link: "#",
-      codeLink: "#",
+      codeLink: "https://github.com/anjuparanagama/Budget-Buddy",
     },
     {
       title: "Eco Vibe",
@@ -150,8 +169,8 @@ function App() {
         "A modern and eco-friendly website built using React, designed to promote sustainability and environmental awareness. It features interactive UI components, responsive design, and smooth navigation.",
       image: "/ecovibe.png",
       tags: ["React", "Tailwind CSS"],
-      link: "#",
-      codeLink: "#",
+      link: "https://ecovibe-b7sb.onrender.com/",
+      codeLink: "https://github.com/anjuparanagama/EcoVibe",
     },
     {
       title: "Simple Library Management System",
@@ -160,25 +179,8 @@ function App() {
       image: "/lms.png",
       tags: ["Python"],
       link: "#",
-      codeLink: "#",
-    },
-    {
-      title: "Simple Library Management System",
-      description:
-        "A Python-based library management system designed to handle book inventory, user accounts, and book transactions efficiently. It supports basic CRUD operations and a user-friendly interface.",
-      image: "/lms.png",
-      tags: ["Java"],
-      link: "#",
-      codeLink: "#",
-    },
-    {
-      title: "QR Code Generator ",
-      description:
-        "A simple web application that generates QR codes for URLs, text, and other data. Users can customize the size and style of the QR codes and download them for use.",
-      image: "/qr.png",
-      tags: ["HTML", "CSS", "JavaScript"],
-      link: "#",
-      codeLink: "#",
+      codeLink:
+        "https://github.com/anjuparanagama/Simple_Library_management_system_using_python",
     },
   ];
 
@@ -403,7 +405,7 @@ function App() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-105"
                   />
 
                   <div className="absolute inset-0 flex items-end justify-between p-4 project-overlay">
@@ -474,6 +476,15 @@ function App() {
               </div>
             ))}
           </div>
+          <p className="text-gray-600 text-center mt-6">
+            If you want to know more about my projects, feel free to{" "}
+            <a
+              href="https://github.com/anjuparanagama"
+              className="text-green-600 hover:text-green-800 font-medium"
+            >
+              reach out!
+            </a>
+          </p>
         </div>
       </section>
 

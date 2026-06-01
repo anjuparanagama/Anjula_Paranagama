@@ -1,4 +1,3 @@
-import React from "react";
 import { X } from "lucide-react";
 
 type Project = {
@@ -37,8 +36,12 @@ export default function ProjectDetails({
           <X className="w-4 h-4" />
         </button>
 
-        <div className="modal-media bg-gradient-to-br from-blue-50 to-white">
-          <img src={project.image} alt={project.title} className="modal-img" />
+        <div className="modal-media bg-gradient-to-br object-contain from-blue-50 to-white">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="modal-img w-full h-full object-cover"
+          />
         </div>
 
         <div className="modal-body p-6 md:p-8 bg-white">
@@ -52,17 +55,6 @@ export default function ProjectDetails({
           <p className="text-gray-700 leading-relaxed mb-4">
             {project.description}
           </p>
-
-          <div className="mb-5">
-            <h4 className="text-sm font-medium text-gray-900 mb-2">
-              Highlights
-            </h4>
-            <ul className="feature-list text-gray-600">
-              <li>Responsive UI with modern design</li>
-              <li>Clean component structure and animations</li>
-              <li>Accessible interactions and keyboard support</li>
-            </ul>
-          </div>
 
           <div className="mb-6">
             <h4 className="text-sm font-medium text-gray-900 mb-2">
